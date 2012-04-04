@@ -1,9 +1,9 @@
 GIT
-  remote: git://github.com/sferik/rails_admin.git
-  revision: ddd89344038290e5edb57e99ffe1e448a1f7e6f8
+  remote: git://github.com/reedlaw/rails_admin.git
+  revision: 3391ba0dff9b0a3fb0c51320a9749a9f73e1b097
   specs:
     rails_admin (0.0.1)
-      bbenezech-nested_form (~> 0.0.5)
+      bbenezech-nested_form (~> 0.0.6)
       bootstrap-sass (~> 2.0)
       builder (~> 3.0)
       coffee-rails (~> 3.1)
@@ -24,16 +24,6 @@ GIT
       activesupport (~> 3.0)
       addressable (~> 2.2)
       httpauth (~> 0.1)
-
-PATH
-  remote: /home/reed/.rbenv/versions/1.9.3-p125/lib/ruby/gems/1.9.1/gems/linecache19-0.5.13
-  specs:
-    linecache19 (0.5.13)
-
-PATH
-  remote: /home/reed/.rbenv/versions/1.9.3-p125/lib/ruby/gems/1.9.1/gems/ruby-debug-base19-0.11.26
-  specs:
-    ruby-debug-base19 (0.11.26)
 
 GEM
   remote: https://rubygems.org/
@@ -59,6 +49,9 @@ GEM
       activesupport (= 3.2.3)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
+    activerecord-postgres-hstore (0.3.0)
+      activerecord
+      rake
     activeresource (3.2.3)
       activemodel (= 3.2.3)
       activesupport (= 3.2.3)
@@ -67,9 +60,9 @@ GEM
       multi_json (~> 1.0)
     addressable (2.2.7)
     arel (3.0.2)
-    bbenezech-nested_form (0.0.5)
+    bbenezech-nested_form (0.0.6)
     bcrypt-ruby (3.0.1)
-    bootstrap-sass (2.0.1)
+    bootstrap-sass (2.0.2)
     builder (3.0.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -79,6 +72,13 @@ GEM
       execjs
     coffee-script-source (1.2.0)
     columnize (0.3.6)
+    debugger (1.0.0)
+      columnize (>= 0.3.1)
+      debugger-linecache
+      debugger-ruby_core_source
+    debugger-linecache (1.0.1)
+      debugger-ruby_core_source
+    debugger-ruby_core_source (1.0.1)
     erubis (2.7.0)
     execjs (1.3.0)
       multi_json (~> 1.0)
@@ -105,6 +105,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.18)
     multi_json (1.2.0)
+    pg (0.13.2)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -135,10 +136,6 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     remotipart (1.0.2)
-    ruby-debug19 (0.11.6)
-      columnize (>= 0.3.1)
-      linecache19 (>= 0.5.11)
-      ruby-debug-base19 (>= 0.11.19)
     sass (3.1.15)
     sass-rails (3.2.4)
       railties (~> 3.2.0)
@@ -163,15 +160,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-postgres-hstore
   bcrypt-ruby
   coffee-rails (~> 3.2.1)
+  debugger
   jquery-rails
-  linecache19 (= 0.5.13)!
   oauth2-provider!
+  pg
   rails (= 3.2.3)
   rails_admin!
-  ruby-debug-base19 (= 0.11.26)!
-  ruby-debug19
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)

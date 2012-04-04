@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(:version => 20120402185651) do
     t.integer  "item"
     t.string   "table"
     t.integer  "month",      :limit => 2
-    t.integer  "year",       :limit => 5
+    t.integer  "year",       :limit => 8
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
   end
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20120402185651) do
   end
 
   create_table "users", :force => true do |t|
+    t.hstore   "data"
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      :null => false

@@ -6,7 +6,7 @@ class AuthorizationController < ApplicationController
   before_filter :regrant_existing_authorization
   
   def new
-    @client = oauth2_authorization_request.client
+    grant_authorization_code(current_user)
   end
 
   def create

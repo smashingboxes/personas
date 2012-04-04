@@ -2,9 +2,11 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 
+gem 'activerecord-postgres-hstore'
 gem 'bcrypt-ruby'
 gem 'oauth2-provider', :git => 'http://github.com/freerange/oauth2-provider.git'
-gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+gem 'pg'
+gem 'rails_admin', :git => 'git://github.com/reedlaw/rails_admin.git'
 gem 'sqlite3'
 
 # Gems used only for assets and not required
@@ -22,9 +24,10 @@ end
 gem 'jquery-rails'
 
 group :development do
-  gem "linecache19", "0.5.13", :path => '/home/reed/.rbenv/versions/1.9.3-p125/lib/ruby/gems/1.9.1/gems/linecache19-0.5.13/'
-  gem "ruby-debug-base19", "0.11.26", :path => '/home/reed/.rbenv/versions/1.9.3-p125/lib/ruby/gems/1.9.1/gems/ruby-debug-base19-0.11.26/'
-  gem 'ruby-debug19', require: 'ruby-debug'
+  gem 'debugger'
+  # gem "linecache19", "0.5.13", :path => '/home/reed/.rbenv/versions/1.9.3-p125/lib/ruby/gems/1.9.1/gems/linecache19-0.5.13/'
+  # gem "ruby-debug-base19", "0.11.26", :path => '/home/reed/.rbenv/versions/1.9.3-p125/lib/ruby/gems/1.9.1/gems/ruby-debug-base19-0.11.26/'
+  # gem 'ruby-debug19', require: 'ruby-debug'
   # gem 'ruby-graphviz'
 end
 
