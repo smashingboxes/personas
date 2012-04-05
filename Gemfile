@@ -4,6 +4,7 @@ gem 'rails', '3.2.3'
 
 gem 'activerecord-postgres-hstore'
 gem 'bcrypt-ruby'
+gem 'nokogiri'
 gem 'oauth2-provider', :git => 'http://github.com/freerange/oauth2-provider.git'
 gem 'pg'
 gem 'rails_admin', :git => 'git://github.com/reedlaw/rails_admin.git'

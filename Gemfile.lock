@@ -105,6 +105,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.18)
     multi_json (1.2.0)
+    nokogiri (1.5.2)
     pg (0.13.2)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -165,6 +166,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   debugger
   jquery-rails
+  nokogiri
   oauth2-provider!
   pg
   rails (= 3.2.3)
