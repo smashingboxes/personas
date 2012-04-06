@@ -108,6 +108,9 @@ GEM
     nokogiri (1.5.2)
     pg (0.13.2)
     polyglot (0.3.3)
+    rabl (0.6.8)
+      activesupport (>= 2.3.14)
+      multi_json (~> 1.0)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -169,6 +172,7 @@ DEPENDENCIES
   nokogiri
   oauth2-provider!
   pg
+  rabl
   rails (= 3.2.3)
   rails_admin!
   sass-rails (~> 3.2.3)

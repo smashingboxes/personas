@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   # GET /profile.json
   def profile
     if @current_user
-      render json: @current_user
+      @user = @current_user
     else
       render json: {'error' => 'no user'}
     end
