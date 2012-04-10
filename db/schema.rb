@@ -47,19 +47,6 @@ ActiveRecord::Schema.define(:version => 20120402185651) do
     t.boolean "trusted",            :default => false
   end
 
-  create_table "rails_admin_histories", :force => true do |t|
-    t.text     "message"
-    t.string   "username"
-    t.integer  "item"
-    t.string   "table"
-    t.integer  "month",      :limit => 2
-    t.integer  "year",       :limit => 8
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
-  end
-
-  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
-
   create_table "templates", :force => true do |t|
     t.string   "name"
     t.string   "template_type"
@@ -70,11 +57,11 @@ ActiveRecord::Schema.define(:version => 20120402185651) do
   end
 
   create_table "users", :force => true do |t|
-    t.hstore   "data"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.boolean  "admin",           :default => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
 end
