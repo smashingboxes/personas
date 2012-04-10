@@ -1,7 +1,7 @@
 class AddOauth2Tables < ActiveRecord::Migration
   def self.up
     create_table 'oauth_clients',             :force => true do |t|
-      t.hstore   'data'
+      # t.hstore   'data'
       t.string   'name'
       t.string   'oauth_identifier',          :null => false
       t.string   'oauth_secret',              :null => false
