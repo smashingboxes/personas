@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
   private
   def render_login(error = nil)
     # Check if user is coming from another site
-    ref = make_absolute(request.env['HTTP_REFERER'])
+    ref = make_absolute(URI.encode(request.env['HTTP_REFERER']))
     host = make_absolute(request.url)
     if host != ref || session[:ref].present?
       # User is coming from client app
