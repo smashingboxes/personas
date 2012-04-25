@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.3'
 
 gem 'activerecord-postgres-hstore'
+gem 'bigdecimal'
 gem 'bcrypt-ruby'
 gem 'cancan'
 gem 'capistrano'
