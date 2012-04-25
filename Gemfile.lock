@@ -193,6 +193,7 @@ DEPENDENCIES
   capistrano
   coffee-rails (~> 3.2.1)
   debugger
+  execjs
   jquery-rails
   nokogiri
   oauth2-provider!
