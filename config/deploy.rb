@@ -7,6 +7,7 @@ set :user, "personas"
 set :deploy_to, "/srv/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
+set :bundle_cmd, "/home/#{user}/bin/bundle"
 
 set :scm, "git"
 set :repository, "git@github.com:smashingboxes/#{application}.git"
