@@ -19,8 +19,8 @@ class SessionsController < ApplicationController
   def destroy
     # Remove user's session and return url
     session[:user_id] = session[:return_url] = nil
-    if params[:redirect] 
-      redirect_to params[:redirect]  
+    if params[:redirect]
+      redirect_to params[:redirect]
     else
       redirect_to root_url, :notice => "Logged out!"
     end
