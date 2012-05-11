@@ -127,7 +127,6 @@ deploy_revision node[:id] do
   action node[:force][node.chef_environment] ? :force_deploy : :deploy
   ssh_wrapper "#{node[:deploy_to]}/deploy-ssh-wrapper" if node[:deploy_key]
   shallow_clone true
-  symlink_before_migrate  "#{node[:deploy_to]}/config/database.yml" => "#{node[:deploy_to]}/config/database.yml"
   before_migrate do
     user "nobody"
     group "nogroup"
