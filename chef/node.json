@@ -1,0 +1,28 @@
+{
+  "id": "personas",
+  "role": [
+      "nginx",
+      "rails",
+      "unicorn"
+  ],
+  "packages": {
+    "git": ""
+  },
+  "gems": {
+    "backup": ""
+  },
+  "repository": "git@github.com:smashingboxes/personas.git",
+  "revision": {
+    "_default": "HEAD"
+  },
+  "deploy_to": "/srv/personas",
+  "force": {
+    "_default": false
+  },
+  "migrate": {
+    "_default": true
+  },
+  "run_list": ["recipe[nginx]",
+               "recipe[rails]",
+               "recipe[unicorn]"]
+}
