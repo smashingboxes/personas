@@ -9,6 +9,7 @@
     "libxml2-dev": "",
     "libxslt1-dev": "",
     "libpq-dev": "",
+    "postgresql": "",
     "git": ""
   },
   "gems": {
