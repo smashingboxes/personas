@@ -6,12 +6,15 @@
       "unicorn"
   ],
   "packages": {
+    "libxml2-dev": "",
+    "libxslt1-dev": "",
+    "libpq-dev": "",
     "git": ""
   },
   "gems": {
     "backup": ""
   },
-  "repository": "git@github.com:smashingboxes/personas.git",
+  "repository": "http://git@github.com/smashingboxes/personas.git",
   "revision": {
     "_default": "HEAD"
   },
