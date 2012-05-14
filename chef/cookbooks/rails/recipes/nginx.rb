@@ -27,7 +27,6 @@ template "/etc/nginx/sites-available/#{node[:id]}" do
   variables(
     :working_directory => ::File.join(node[:deploy_to], 'current')
   )
-  notifies :reload, "service[nginx]"
 end
 
 nginx_site "default" do
@@ -36,4 +35,5 @@ end
 
 nginx_site node[:id] do
   enable true
+  notifies :reload, "service[nginx]"
 end

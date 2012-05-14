@@ -18,7 +18,7 @@ template "#{node[:deploy_to]}/shared/config/database.yml" do
               :adapter => 'postgresql',
               :database => node[:id],
               :username => 'postgres',
-              :password => 'secret',
+              :password => node[:postgresql][:password][:postgres],
               :host => '127.0.0.1',
               :pool => '5'
             })

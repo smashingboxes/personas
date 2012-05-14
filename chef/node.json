@@ -14,7 +14,8 @@
     "git": ""
   },
   "gems": {
-    "backup": ""
+    "backup": "",
+    "pg": ""
   },
   "repository": "http://git@github.com/smashingboxes/personas.git",
   "revision": {
