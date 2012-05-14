@@ -79,6 +79,7 @@ execute "start-unicorn" do
   group "nogroup"
   cwd ::File.join(node[:deploy_to], 'current')
   command "bundle exec unicorn_rails -c /etc/unicorn/#{node[:id]}.rb -E production -D"
+  notifies :restart, "service[nginx]"
   not_if do
     File.exists?(pid)
   end
