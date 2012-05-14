@@ -17,9 +17,8 @@ echo "ALTER ROLE postgres ENCRYPTED PASSWORD '#{node[:postgres_password]}';" | p
   action :run
 end
 
-bash "create-db" do
+execute "create-db" do
   user 'postgres'
-  code "createdb #{node[:id]}"
-  not_if { "psql --list | grep personas" }
-  action :run
+  command "createdb #{node[:id]}"
+  not_if "sudo -u postgres psql --list | grep #{node[:id]}"
 end
