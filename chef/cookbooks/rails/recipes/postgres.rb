@@ -14,7 +14,7 @@ template "#{node[:deploy_to]}/shared/config/database.yml" do
   group node[:users][0][:username]
   mode 0644
   variables({
-              :environment => node.chef_environment
+              :environment => node.chef_environment,
               :adapter => 'postgresql',
               :database => node[:id],
               :username => 'postgres',
