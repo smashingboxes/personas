@@ -3,7 +3,8 @@
   "role": [
       "nginx",
       "rails",
-      "unicorn"
+      "unicorn",
+      "postgres"
   ],
   "packages": {
     "libxml2-dev": "",

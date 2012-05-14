@@ -81,6 +81,11 @@ Vagrant::Config.run do |config|
   # The Opscode Platform uses HTTPS. Substitute your organization for
   # ORGNAME in the URL and validation key.
   #
+  # config.vm.provision :chef_solo do |chef|
+  #   # This path will be expanded relative to the project directory
+  #   chef.cookbooks_path = "chef/cookbooks"
+  # end
+
   # If you have your own Chef Server, use the appropriate URL, which may be
   # HTTP instead of HTTPS depending on your configuration. Also change the
   # validation key to validation.pem.
