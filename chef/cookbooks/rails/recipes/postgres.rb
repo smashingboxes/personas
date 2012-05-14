@@ -10,8 +10,8 @@ end
 
 template "#{node[:deploy_to]}/shared/config/database.yml" do
   source 'database.yml.erb'
-  owner node[:users][0][:username]
-  group node[:users][0][:username]
+  owner "nobody"
+  group "nogroup"
   mode 0644
   variables({
               :environment => node.chef_environment,

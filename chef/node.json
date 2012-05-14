@@ -2,9 +2,9 @@
   "id": "personas",
   "role": [
       "nginx",
+      "postgres",
       "rails",
-      "unicorn",
-      "postgres"
+      "unicorn"
   ],
   "packages": {
     "libxml2-dev": "",
@@ -28,6 +28,7 @@
     "_default": true
   },
   "run_list": ["recipe[nginx]",
+               "recipe[postgres]",
                "recipe[rails]",
                "recipe[unicorn]"]
 }

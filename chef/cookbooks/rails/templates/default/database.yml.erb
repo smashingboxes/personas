@@ -1,8 +1,7 @@
-<%= @environment %>:
+production:
   adapter:   <%= @adapter %>
   database:  <%= @database %>
   username:  <%= @username %>
   password:  <%= @password %>
   host:      <%= @host %>
-  reconnect: true
-  pool       <%= @pool %>
+  pool:      <%= @pool %>
