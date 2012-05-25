@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120402185651) do
+ActiveRecord::Schema.define(:version => 20120401234568) do
 
   create_table "oauth_access_tokens", :force => true do |t|
     t.integer  "authorization_id", :null => false
@@ -45,15 +45,6 @@ ActiveRecord::Schema.define(:version => 20120402185651) do
     t.string  "oauth_secret",                          :null => false
     t.string  "oauth_redirect_uri"
     t.boolean "trusted",            :default => false
-  end
-
-  create_table "templates", :force => true do |t|
-    t.string   "name"
-    t.string   "template_type"
-    t.text     "content"
-    t.integer  "oauth_client_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
   end
 
   create_table "users", :force => true do |t|
