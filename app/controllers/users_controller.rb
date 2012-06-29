@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # authenticate_with_oauth
+  authenticate_with_oauth :except => [:new, :create]
   before_filter :set_current_user_from_oauth, :except => [:new, :create]
 
   def new
@@ -8,11 +8,15 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to root_url, notice: "Thank you for signing up!"
-    else
-      render "new"
+    respond_to do |format|
+      if @user.save
+        session[:user_id] = @user.id
+        format.json { render json: { uid: @user.id } }
+        format.html { redirect_to root_url, notice: "Thank you for signing up!" }
+      else
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.html { render :new }
+      end
     end
   end
 

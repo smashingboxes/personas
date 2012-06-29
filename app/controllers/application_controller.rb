@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include UrlHelper
+
   protect_from_forgery
 
   private
@@ -51,5 +53,35 @@ class ApplicationController < ActionController::Base
 
   def authorize
     redirect_to login_url, alert: "Not authorized" if current_user.nil?
+  end
+
+  def scrape_client_page(page, message = nil)
+    # Check if user is coming from another site
+    ref = make_absolute(URI.encode(request.env['HTTP_REFERER']))
+    host = make_absolute(request.url)
+    if host != ref || session[:ref].present?
+      # User is coming from client app
+      if ref != host
+        session[:ref] = ref
+      else
+        ref = session[:ref]
+      end
+      # Get the client app's page and alter it,
+      # adding authenticity token and rewritting urls.
+      if message
+        url = "#{ref}#{page}?#{message.keys.first}=#{URI.escape(message.values.first)}"
+      else
+        url = "#{ref}#{page}"
+      end
+      doc = Nokogiri::HTML(open(url))
+      if token = doc.at_css("input[name=authenticity_token]")
+        token["value"] = form_authenticity_token
+      end
+      doc.css("a").map {|a|rewrite(a, 'href', ref)}
+      doc.css("img").map {|img|rewrite(img, 'src', ref)}
+      doc.css("link").map {|l|rewrite(l, 'href', ref)}
+      doc.css("script").map {|s|rewrite(s, 'src', ref)}
+      render :text => doc.to_s
+    end
   end
 end

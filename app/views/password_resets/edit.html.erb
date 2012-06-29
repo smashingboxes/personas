@@ -1,0 +1,44 @@
+<div class="main">
+  <h2>Reset Password</h2>  
+  <%= error_messages_for(@user) %>
+	<% if flash[:error] %>
+  <div class="alert alert-error">
+	  <%=raw flash[:error] %>
+  </div>
+	<% flash[:error] = nil %>
+	<% end %>
+  <div class="visiting">
+    <div class="block bootstrap">
+      <%= form_for @user, :url => password_reset_path("password") do |f| %>
+      <fieldset>
+        <div class="control-group">
+          <%= f.label :password %>
+          <div class="controls">
+            <%= f.password_field :password %>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <div class="control-group">
+          <label for="user_password_confirmation">Password <br />Confirmation</label>
+          <div class="controls">
+	          <%= f.password_field :password_confirmation %>
+          </div>
+        </div>
+      </fieldset>
+      <div class="actions">
+        <button type="submit" class="btn btn-primary">
+          <i class="icon-user icon-white"></i> Reset Password</button>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="sidebar">
+  <div class="module">
+    <h4>Reset Information</h4>
+    <p>Please enter a new password and then enter the same password again to
+    confirm it.</p>
+  </div>
+</div>

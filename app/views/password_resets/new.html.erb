@@ -1,0 +1,36 @@
+<div class="main">
+  <h2>Reset Password</h2>  
+
+	<% if flash[:error] %>
+  <div class="alert alert-error">
+	  <%=raw flash[:error] %>
+  </div>
+	<% flash[:error] = nil %>
+	<% end %>
+  <div class="visiting">
+    <div class="block bootstrap">
+      <%= form_tag password_resets_path do %>
+      <fieldset>
+        <div class="control-group">
+          <%= label_tag :email %>
+          <div class="controls">
+            <%= text_field_tag :email, params[:email] %>
+          </div>
+        </div>
+      </fieldset>
+      <div class="actions">
+        <button type="submit" class="btn btn-primary">
+          <i class="icon-user icon-white"></i> Reset Password</button>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="sidebar">
+  <div class="module">
+    <h4>Reset Information</h4>
+    <p>Please submit your email address and we'll send you
+    instructions on how to reset your password.</p>
+  </div>
+</div>

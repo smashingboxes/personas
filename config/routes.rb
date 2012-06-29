@@ -12,6 +12,7 @@ Personas::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   resources :users
+  resources :password_resets
   resources :sessions
 
   root :to => "users#new"
