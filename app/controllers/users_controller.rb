@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_filter :set_current_user_from_oauth, :except => [:new, :create]
 
   def new
+    scrape_client_page("/signup")
     @user = User.new
   end
 
@@ -12,10 +13,10 @@ class UsersController < ApplicationController
       if @user.save
         session[:user_id] = @user.id
         format.json { render json: { uid: @user.id } }
-        format.html { redirect_to root_url, notice: "Thank you for signing up!" }
+        format.html { redirect_to session[:ref].to_s + "/auth/alphalogin", notice: "Thank you for signing up!" }
       else
         format.json { render json: @user.errors, status: :unprocessable_entity }
-        format.html { render :new }
+        format.html { scrape_client_page("/signup", error: @user.errors.full_messages.to_sentence) }
       end
     end
   end
