@@ -13,6 +13,7 @@ gem 'oauth2-provider', :git => 'http://github.com/freerange/oauth2-provider.git'
 gem 'pg'
 gem 'rails_admin', :git => 'git://github.com/reedlaw/rails_admin.git'
 gem 'rabl'
+gem 'thin'
 gem 'unicorn'
 
 # Gems used only for assets and not required
