@@ -11,4 +11,10 @@ class User < ActiveRecord::Base
   validates_presence_of :password
   validates_presence_of :password_confirmation
   validates_confirmation_of :password
+
+  before_save :email_downcase
+
+  def email_downcase
+    self.email = self.email.downcase
+  end
 end
